@@ -1,17 +1,23 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import useProductDetails from "../hooks/useProductDetails";
 import Header from "./Header.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { product, loading, error } = useProductDetails(id);
   const navigate = useNavigate();
+  const { state } = useAuth();
 
   if (loading)
     return (
       <div className="flex justify-center items-center h-screen">Memuat...</div>
     );
   if (error) return <div>{error}</div>;
+
+  if (!state.token) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <>
