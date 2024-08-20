@@ -8,6 +8,7 @@ import {
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
+import { ProductProvider } from "./context/ProductContext.jsx";
 
 const App = () => {
   const { state } = useAuth();
@@ -29,7 +30,9 @@ const App = () => {
 export default function RootApp() {
   return (
     <AuthProvider>
-      <App />
+      <ProductProvider>
+        <App />
+      </ProductProvider>
     </AuthProvider>
   );
 }
