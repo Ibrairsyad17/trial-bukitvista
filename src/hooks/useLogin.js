@@ -13,10 +13,13 @@ const useLogin = () => {
     e.preventDefault();
     try {
       setIsLoading(true);
-      const response = await axios.post("https://fakestoreapi.com/auth/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_API}/auth/login`,
+        {
+          username,
+          password,
+        },
+      );
       const { token } = response.data;
       if (token) {
         localStorage.setItem("token", token);
