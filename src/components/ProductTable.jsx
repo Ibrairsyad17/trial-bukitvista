@@ -5,12 +5,9 @@ const ProductTable = () => {
   const {
     products,
     categories,
-    currentPage,
     itemsPerPage,
-    totalPages,
     sort,
     category,
-    handlePageChange,
     handleSortChange,
     handleLimitChange,
     handleCategoryChange,
