@@ -9,6 +9,7 @@ import { AuthProvider, useAuth } from "./context/AuthContext";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import { ProductProvider } from "./context/ProductContext.jsx";
+import ProductDetails from "./components/ProducDetails.jsx";
 
 const App = () => {
   const { state } = useAuth();
@@ -21,6 +22,7 @@ const App = () => {
           path="/dashboard"
           element={state.token ? <Dashboard /> : <Navigate to="/login" />}
         />
+        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
