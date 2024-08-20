@@ -30,7 +30,7 @@ const Login = () => {
               <div className="grid gap-y-4">
                 <div>
                   <label htmlFor="username" className="block text-xs mb-2">
-                    Email
+                    Username
                   </label>
                   <div className="relative">
                     <input
@@ -41,7 +41,7 @@ const Login = () => {
                       required
                       className={`px-3 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 placeholder:text-xs focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-xs sm:leading-6`}
                       onChange={(e) => setUsername(e.target.value)}
-                      placeholder="Email: ibrahim@gmail.com"
+                      placeholder="Username: mor_2314"
                     />
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const Login = () => {
                       required
                       aria-describedby="password-error"
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Kata Sandi: 123456"
+                      placeholder="Kata Sandi: 83r5^_"
                     />
                   </div>
                 </div>
